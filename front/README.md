@@ -1,71 +1,60 @@
-# 🚀 Backend Lab (simple)
+# Async MQ Lab (/back)
 
-## 📁 Estructura
-
-```
-/back
-/frontend
-/docker-compose.yml
-```
+Backend para probar colas y procesamiento async.
 
 ---
 
-## 🐳 Docker (Redis + Kafka)
+## 🚀 Run
 
-```
-docker compose up --build
-```
+Infra:
 
----
-
-## 🔧 Backend (/back)
-
-```
-cd back
-npm install
-npm start
+```bash
+docker compose up
 ```
 
-Dev:
+API:
 
-```
+```bash
 npm run dev
 ```
 
-Kafka workers:
+Workers:
 
-```
+```bash
+npm run bull
+npm run rabbit
 npm run kafka
+npm run nats
 ```
 
 ---
 
-## 🎨 Frontend
+## 🔌 Endpoints
 
-```
-cd frontend
-npm install
-npm start
-```
-
----
-
-## 🔥 Load testing
-
-```
-npm run load
+```bash
+POST /bull/email
+POST /rabbit/email
+POST /kafka/email
+POST /nats/email
 ```
 
 ---
 
-## 🧠 Orden
+## 🧠 Sistemas
 
-1. Redis
-2. DB
-3. Kafka
-4. Load testing
-5. Arquitectura
+- BullMQ (Redis)
+- RabbitMQ
+- Kafka
+- NATS
 
 ---
 
-Listo.
+## ⚠️ Nota
+
+Si corres local:
+
+```bash
+localhost (NO redis / kafka / rabbitmq)
+```
+
+---
